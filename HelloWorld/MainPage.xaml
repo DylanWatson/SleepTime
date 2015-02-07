@@ -56,7 +56,8 @@
                 <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
             </StackPanel>
             <TextBlock x:Name="greetingOutput" />
-            <Button Content="Go to photo page" Click="PhotoPageButton_Click" />
+            <Button Content="Start" Click="StartQuizButton_Page" />
+
         </StackPanel>
     </Grid>
 </Page>
