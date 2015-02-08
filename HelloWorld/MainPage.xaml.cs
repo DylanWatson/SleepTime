@@ -122,5 +122,13 @@ namespace HelloWorld
                 this.Frame.Navigate(typeof(StartCallibration));
             }
         }
+
+        private void IntroductionButton_Page(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(Introduction));
+            }
+        }
     }
 }

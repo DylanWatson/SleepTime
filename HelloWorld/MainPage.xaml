@@ -50,8 +50,9 @@
 
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <Button Content="Start Challenge" Click="StartQuizButton_Page" />
-            <Button Content="Start Calibration" Click="StartCallibrationButton_Page" />
+            <Button Content="Start Challenge" Width ="200" HorizontalAlignment="Center"  Click="StartQuizButton_Page" />
+            <Button Content="Start Calibration" Width="200" HorizontalAlignment="Center" Click="StartCallibrationButton_Page" />
+            <Button Content="Introduction" Width="200" HorizontalAlignment="Center" Click="IntroductionButton_Page" />
 
         </StackPanel>
     </Grid>
