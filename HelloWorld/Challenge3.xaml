@@ -47,11 +47,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <Image Name="Image1"/>
-            <Image Name="Image2"/>
-            <Image Name="Image3"/>
-            <Image Name="Image4"/>
-            <Image Name="Image5"/>
+            
         </StackPanel>
     </Grid>
 </Page>
