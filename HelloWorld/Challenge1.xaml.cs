@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -120,6 +121,32 @@ namespace HelloWorld
         private void SubmitAnswerButton_Click(object sender, RoutedEventArgs e)
         {
             int number1 = int.Parse(Number1.Text);
+            int number2 = int.Parse(Number2.Text);
+            string op = Operator.Text;
+            int solution = 0;
+
+            if(op.CompareTo("+") == 0)
+            {
+                solution = number1 + number2;
+                Debug.WriteLine(solution + " " + Convert.ToInt16(answer.Text));
+            }
+
+            else
+            {
+                solution = number1 - number2;
+                Debug.WriteLine(solution + " " + Convert.ToInt16(answer.Text));
+            }
+
+          
+            if(answer.Text.CompareTo(solution.ToString()) == 0)
+            {
+                Result.Text = "Correct!";
+            }
+
+            else
+            {
+                Result.Text = "Incorrect.  Try again...";
+            }
         }
     }
 }
