@@ -47,13 +47,14 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
+            
             <Canvas Height="300" Width="200">
-                
                 <Polyline x:Name="line"
-                    
-                    Stroke="White"
+                    Stroke="Yellow"
                     StrokeThickness="5"/>
             </Canvas>
+
+            <Image Source="test.png" Visibility="Visible" Height="1000" Width="1300"/>
         </StackPanel>
             
     </Grid>
