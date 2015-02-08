@@ -28,7 +28,7 @@ namespace HelloWorld
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        int count = 0;
+        int count2 = 0;
         int recent = 0;
         int choice = 0;
         int penalty = 0;
@@ -97,26 +97,45 @@ namespace HelloWorld
         public void generateProblem()
         {
 
+
+             
                 Random rnd = new Random();
                 choice = rnd.Next(1, 6);
 
-                if(recent!=choice)
+                if(choice == 1)
                 {
-                    Problem.Text = "logic" + choice.ToString();
-                    recent = choice;
+                    Problem.Text = logic1;
+                    recent = 1;
+                }
+
+
+                else if (choice == 2)
+                {
+                    Problem.Text = logic2;
+                    recent = 2;
+                }
+
+                else if (choice == 3)
+                {
+                    Problem.Text = logic3;
+                    recent = 3;
+                }
+
+                else if (choice == 4)
+                {
+                    Problem.Text = logic4;
+                    recent = 4;
                 }
 
                 else
                 {
-                    while(recent == choice)
-                    {
-                        choice = rnd.Next(1, 6);
-                    }
-
-                    Problem.Text = "logic" + choice.ToString();
-                    recent = choice;
-                    
+                    Problem.Text = logic5;
+                    recent = 5;
                 }
+
+
+
+               
 
             
             
@@ -167,13 +186,13 @@ namespace HelloWorld
                     penalty += 100;
                 }
 
-            while(count < 2)
+            while(count2 < 2)
             {
-                count++;
+                count2++;
                 generateProblem();
             }
 
-            if(count == 2)
+            if(count2 == 2)
             {
                 stopWatch.Stop();
                 TimeSpan ts = stopWatch.Elapsed;
@@ -192,14 +211,42 @@ namespace HelloWorld
 
         public int checkProblem()
         {
-            int answer = int.Parse("ans" + choice.ToString());
-            if(answer!=int.Parse(Problem.Text))
+            int answer1 = 0;
+
+            if(recent == 1)
             {
+                answer1 = ans1;
+            }
+
+            else if (recent == 2)
+            {
+                answer1 = ans2;
+            }
+
+            else if (recent == 3)
+            {
+                answer1 = ans3;
+            }
+
+            else if (recent == 4)
+            {
+                answer1 = ans4;
+            }
+
+            else
+            {
+                answer1 = ans5;
+            }
+
+            if(answer.Text.CompareTo(answer.ToString()) == 0)
+            {
+                answer.Text = "";
                 return -1;
             }
 
             else
             {
+                answer.Text = "";
                 return 0;
             }
         }
