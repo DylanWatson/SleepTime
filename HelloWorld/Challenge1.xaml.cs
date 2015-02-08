@@ -164,14 +164,14 @@ namespace HelloWorld
 
             if (answer.Text.CompareTo(solution.ToString()) == 0)
             {
-                Result.Text = "Correct!";
+                answer.Text = "";
                 return 0;
             }
 
             else
             {
-                Result.Text = "Incorrect.  Try again...";
-                return 2;
+                answer.Text = "";
+                return 1;
             }
         }
     }

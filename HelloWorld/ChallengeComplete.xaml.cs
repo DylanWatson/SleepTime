@@ -102,5 +102,10 @@ namespace HelloWorld
         }
 
         #endregion
+
+        private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
