@@ -66,6 +66,17 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+        int result = 0;
+
+            foreach (int time in Global.list)
+            {
+                result += time;
+            }
+
+            Global.list.Clear();
+
+            Global.sum.Add(result);
+
         }
 
         /// <summary>
@@ -107,7 +118,14 @@ namespace HelloWorld
         {
             if (this.Frame != null)
             {
-                this.Frame.Navigate(typeof(Results));
+                if (Global.sum.Count() == 1)
+                {
+                    this.Frame.Navigate(typeof(MainPage));
+                }
+                else
+                {
+                    this.Frame.Navigate(typeof(Results));
+                }
             }
         }
     }

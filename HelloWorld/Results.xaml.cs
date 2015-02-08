@@ -67,16 +67,7 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            int result = 0;
-
-            foreach (int time in Global.list)
-            {
-                result += time;
-            }
-
-            Global.list.Clear();
-
-            Global.sum.Add(result);
+            
 
             PointCollection points = line.Points;
 
