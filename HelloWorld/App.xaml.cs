@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
@@ -34,7 +35,6 @@ namespace HelloWorld
             this.Suspending += OnSuspending;
         }
 
-        public string DBPath { get; set; }
 
 
         /// <summary>
@@ -84,7 +84,8 @@ namespace HelloWorld
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
 
-            this.DBPath = "c:/hack.db";
+
+
 
             // Ensure the current window is active
             Window.Current.Activate();
