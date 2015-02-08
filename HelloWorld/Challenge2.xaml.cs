@@ -186,7 +186,7 @@ namespace HelloWorld
                     penalty += 100;
                 }
 
-            while(count2 < 2)
+            if(count2 < 2)
             {
                 count2++;
                 generateProblem();
