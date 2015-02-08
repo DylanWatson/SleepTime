@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
-
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace HelloWorld
@@ -25,6 +24,7 @@ namespace HelloWorld
     public sealed partial class Challenge1 : Page
     {
         int count = 0;
+        Stopwatch stopWatch = new Stopwatch();
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -68,6 +68,8 @@ namespace HelloWorld
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             generateProblem();
+            stopWatch.Start();
+            
         }
 
         public void generateProblem()
@@ -133,6 +135,10 @@ namespace HelloWorld
 
             if(count == 5)
             {
+                stopWatch.Stop();
+                TimeSpan ts = stopWatch.Elapsed;
+                int milliseconds = ts.Milliseconds;
+                Debug.WriteLine(milliseconds);
                 if (this.Frame != null)
                 {
                     this.Frame.Navigate(typeof(ChallengeComplete));
