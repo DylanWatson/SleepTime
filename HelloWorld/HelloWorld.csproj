@@ -107,7 +107,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="Challenge2.xaml">
+=======
+    <Page Include="Challenge2Complete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Challenge3.xaml">
+>>>>>>> 06137187eda17760322fa0956d27cc30765da5ff
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,8 +147,16 @@
     <Compile Include="Challenge1.xaml.cs">
       <DependentUpon>Challenge1.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Challenge2.xaml.cs">
       <DependentUpon>Challenge2.xaml</DependentUpon>
+=======
+    <Compile Include="Challenge2Complete.xaml.cs">
+      <DependentUpon>Challenge2Complete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Challenge3.xaml.cs">
+      <DependentUpon>Challenge3.xaml</DependentUpon>
+>>>>>>> 06137187eda17760322fa0956d27cc30765da5ff
     </Compile>
     <Compile Include="ChallengeComplete.xaml.cs">
       <DependentUpon>ChallengeComplete.xaml</DependentUpon>
@@ -156,8 +172,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLite.cs" />
-    <Compile Include="SQLiteAsync.cs" />
     <Compile Include="StartCallibration.xaml.cs">
       <DependentUpon>StartCallibration.xaml</DependentUpon>
     </Compile>
@@ -187,9 +201,6 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.WinRT81, Version=3.8.8.1">
-      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
     </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

@@ -21,7 +21,7 @@ namespace HelloWorld
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class ChallengeComplete : Page
+    public sealed partial class Challenge3 : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +45,7 @@ namespace HelloWorld
         }
 
 
-        public ChallengeComplete()
+        public Challenge3()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -102,18 +102,5 @@ namespace HelloWorld
         }
 
         #endregion
-
-        private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StartChallenge2Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(Challenge2));
-            }
-        }
     }
 }
