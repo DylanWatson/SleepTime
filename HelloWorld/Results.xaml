@@ -52,8 +52,7 @@
                 <Polyline x:Name="line"
                     
                     Stroke="White"
-                    StrokeThickness="5"
-                    Canvas.Left="150" />
+                    StrokeThickness="5"/>
             </Canvas>
         </StackPanel>
             
