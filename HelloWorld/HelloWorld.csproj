@@ -107,15 +107,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
     <Page Include="Challenge2.xaml">
-=======
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Challenge2Complete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Challenge3.xaml">
->>>>>>> 06137187eda17760322fa0956d27cc30765da5ff
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,16 +147,14 @@
     <Compile Include="Challenge1.xaml.cs">
       <DependentUpon>Challenge1.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Challenge2.xaml.cs">
       <DependentUpon>Challenge2.xaml</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Challenge2Complete.xaml.cs">
       <DependentUpon>Challenge2Complete.xaml</DependentUpon>
     </Compile>
     <Compile Include="Challenge3.xaml.cs">
       <DependentUpon>Challenge3.xaml</DependentUpon>
->>>>>>> 06137187eda17760322fa0956d27cc30765da5ff
     </Compile>
     <Compile Include="ChallengeComplete.xaml.cs">
       <DependentUpon>ChallengeComplete.xaml</DependentUpon>
