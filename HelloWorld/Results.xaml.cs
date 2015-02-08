@@ -82,9 +82,12 @@ namespace HelloWorld
 
             for(int i= 0; i < Global.sum.Count();i++)
             {
-                Point point = new Point(i, Global.sum.ElementAt(i));
+                double x = System.Convert.ToDouble(i*10);
+                double y = Global.sum.ElementAt(i) / 10;
+
+                Point point = new Point(x, y);
                 points.Add(point);
-                Debug.WriteLine(i + " " + Global.sum.ElementAt(i));
+                Debug.WriteLine(x + " " + y);
  
             }
 
