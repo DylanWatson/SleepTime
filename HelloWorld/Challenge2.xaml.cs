@@ -185,7 +185,7 @@ namespace HelloWorld
                 }
                 if (this.Frame != null)
                 {
-                    this.Frame.Navigate(typeof(ChallengeComplete));
+                    this.Frame.Navigate(typeof(Challenge2Complete));
                 }
             }
         }
