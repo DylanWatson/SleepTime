@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Diagnostics;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -22,9 +21,9 @@ namespace HelloWorld
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Challenge1 : Page
+    public sealed partial class ChallengeComplete : Page
     {
-        int count = 0;
+
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -46,7 +45,7 @@ namespace HelloWorld
         }
 
 
-        public Challenge1()
+        public ChallengeComplete()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -67,24 +66,6 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            generateProblem();
-        }
-
-        public void generateProblem()
-        {
-            Random rnd = new Random();
-            Number1.Text = rnd.Next(0, 12).ToString();
-            Number2.Text = rnd.Next(0, 12).ToString();
-            int operatorChoice = rnd.Next(0, 2);
-
-            if (operatorChoice.Equals(0))
-            {
-                Operator.Text = "+";
-            }
-            else
-            {
-                Operator.Text = "-";
-            }
         }
 
         /// <summary>
@@ -121,58 +102,5 @@ namespace HelloWorld
         }
 
         #endregion
-
-        private void SubmitAnswerButton_Click(object sender, RoutedEventArgs e)
-        {
-            checkProblem();
-            count++;
-            if(count < 5)
-            {
-                generateProblem();
-            }
-
-            if(count == 5)
-            {
-                if (this.Frame != null)
-                {
-                    this.Frame.Navigate(typeof(ChallengeComplete));
-                }
-            }
-
-
-        }
-
-        public int checkProblem()
-        {
-            Debug.WriteLine("Sound off.");
-            int number1 = int.Parse(Number1.Text);
-            int number2 = int.Parse(Number2.Text);
-            Debug.WriteLine(number1 + " " + number2);
-            string op = Operator.Text;
-            int solution = 0;
-
-            if (op.CompareTo("+") == 0)
-            {
-                solution = number1 + number2;
-            }
-
-            else
-            {
-                solution = number1 - number2;
-            }
-
-
-            if (answer.Text.CompareTo(solution.ToString()) == 0)
-            {
-                Result.Text = "Correct!";
-                return 0;
-            }
-
-            else
-            {
-                Result.Text = "Incorrect.  Try again...";
-                return 2;
-            }
-        }
     }
 }
