@@ -47,7 +47,9 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            
+            <Image Name="image1" Width="200" Height="100" DoubleTapped="AnswerSelectButton_Click" Source="Assets\fire.png"/>
+            <Image Name="image2" Width="200" Height="100" DoubleTapped="AnswerSelectButton_Click" Source="Assets\dog.png" />
+            <Image Name="image3" Width="200" Height="100" DoubleTapped="AnswerSelectButton_Click" Source="Assets\cat.png" />
         </StackPanel>
     </Grid>
 </Page>

@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Graphics.Imaging;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -66,6 +68,14 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            Random rnd = new Random();
+            int selection = rnd.Next(0,3);
+            selection = 0;
+            if(selection == 0)
+            {
+                string url = "Assets\fire.png";
+                image1.Source = new BitmapImage(new Uri(url));
+            }
         }
 
         /// <summary>
@@ -102,5 +112,10 @@ namespace HelloWorld
         }
 
         #endregion
+
+        private void AnswerSelectButton_Click(object sender, DoubleTappedRoutedEventArgs e)
+        {
+
+        }
     }
 }
