@@ -70,7 +70,7 @@ namespace HelloWorld
             Random rnd = new Random();
             Number1.Text = rnd.Next(0, 12).ToString();
             Number2.Text = rnd.Next(0, 12).ToString();
-            int operatorChoice = rnd.Next(0, 1);
+            int operatorChoice = rnd.Next(0, 2);
 
             if(operatorChoice.Equals(0))
             {
