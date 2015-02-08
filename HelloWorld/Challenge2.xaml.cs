@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace HelloWorld
@@ -21,16 +22,34 @@ namespace HelloWorld
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Challenge1 : Page
+    public sealed partial class Challenge2 : Page
     {
-        int count = 0;
-        Stopwatch stopWatch = new Stopwatch();
+
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        
+        int count = 0;
+        int recent = 0;
+        int choice = 0;
+        int penalty = 0;
+        Stopwatch stopWatch = new Stopwatch();
 
+        //This is where the logic questions and answers reside
+        string logic1 = "Tim has five bears. His brother Peter has seven of them. How many do they have together?";
+        int ans1 = 12;
 
+        string logic2 = "You had eight dolls, but you lost three of them. How many do you have now?";
+        int ans2 = 5;
+
+        string logic3 = "It takes your friend ten minutes to get to your house. How long would a roundtrip take him?";
+        int ans3 = 20;
+
+        string logic4 = "There are sixteen girls and ten boys in a class. How many more girls than boys are there?";
+        int ans4 = 6;
+
+        string logic5 = "Peter weighs 200 lbs, Tim weighs 192 lbs, and John weighs 174 lbs. How much more does Peter weigh" +
+                        " than John?";
+        int ans5 = 26;
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -50,7 +69,7 @@ namespace HelloWorld
         }
 
 
-        public Challenge1()
+        public Challenge2()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -73,24 +92,35 @@ namespace HelloWorld
         {
             generateProblem();
             stopWatch.Start();
-            
         }
 
         public void generateProblem()
         {
-            Random rnd = new Random();
-            Number1.Text = rnd.Next(0, 12).ToString();
-            Number2.Text = rnd.Next(0, 12).ToString();
-            int operatorChoice = rnd.Next(0, 2);
 
-            if (operatorChoice.Equals(0))
-            {
-                Operator.Text = "+";
-            }
-            else
-            {
-                Operator.Text = "-";
-            }
+                Random rnd = new Random();
+                choice = rnd.Next(1, 6);
+
+                if(recent!=choice)
+                {
+                    Problem.Text = "logic" + choice.ToString();
+                    recent = choice;
+                }
+
+                else
+                {
+                    while(recent == choice)
+                    {
+                        choice = rnd.Next(1, 6);
+                    }
+
+                    Problem.Text = "logic" + choice.ToString();
+                    recent = choice;
+                    
+                }
+
+            
+            
+            
         }
 
         /// <summary>
@@ -131,57 +161,46 @@ namespace HelloWorld
         private void SubmitAnswerButton_Click(object sender, RoutedEventArgs e)
         {
             checkProblem();
-            count++;
-            if(count < 5)
+
+                if(checkProblem()!=0)
+                {
+                    penalty += 100;
+                }
+
+            while(count < 2)
             {
+                count++;
                 generateProblem();
             }
 
-            if(count == 5)
+            if(count == 2)
             {
                 stopWatch.Stop();
                 TimeSpan ts = stopWatch.Elapsed;
                 int milliseconds = ts.Milliseconds;
-                Debug.WriteLine(milliseconds);
+
+                if(penalty!=0)
+                {
+                    milliseconds += penalty;
+                }
                 if (this.Frame != null)
                 {
                     this.Frame.Navigate(typeof(ChallengeComplete));
                 }
             }
-
-
         }
 
         public int checkProblem()
         {
-            Debug.WriteLine("Sound off.");
-            int number1 = int.Parse(Number1.Text);
-            int number2 = int.Parse(Number2.Text);
-            Debug.WriteLine(number1 + " " + number2);
-            string op = Operator.Text;
-            int solution = 0;
-
-            if (op.CompareTo("+") == 0)
+            int answer = int.Parse("ans" + choice.ToString());
+            if(answer!=int.Parse(Problem.Text))
             {
-                solution = number1 + number2;
+                return -1;
             }
 
             else
             {
-                solution = number1 - number2;
-            }
-
-
-            if (answer.Text.CompareTo(solution.ToString()) == 0)
-            {
-                answer.Text = "";
                 return 0;
-            }
-
-            else
-            {
-                answer.Text = "";
-                return 1;
             }
         }
     }

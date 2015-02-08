@@ -107,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Challenge2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChallengeComplete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +138,9 @@
     </Compile>
     <Compile Include="Challenge1.xaml.cs">
       <DependentUpon>Challenge1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Challenge2.xaml.cs">
+      <DependentUpon>Challenge2.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChallengeComplete.xaml.cs">
       <DependentUpon>ChallengeComplete.xaml</DependentUpon>
