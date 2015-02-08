@@ -107,5 +107,13 @@ namespace HelloWorld
         {
 
         }
+
+        private void StartChallenge2Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(Challenge2));
+            }
+        }
     }
 }

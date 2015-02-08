@@ -51,7 +51,7 @@
                 <TextBlock Text="Make sure you are alert before you start the callibration." />
             </Viewbox>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,20" >
-                <Button Content="Start" Click="BeginChallengeButton_Page" />
+                <Button Content="Start" Click="BeginChallengeButton_Page" FontSize="30"/>
             </StackPanel>
         </StackPanel>
     </Grid>
