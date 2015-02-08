@@ -46,5 +46,11 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <StackPanel Grid.Row="1" Margin="120,30,0,0">
+            <TextBlock Text="When you are ready to start your challenges, press the start button." FontSize="40"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,20" >
+                <Button Content="Start" Click="StartChallenge1Button_Click" FontSize="30" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

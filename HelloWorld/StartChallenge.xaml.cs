@@ -107,5 +107,14 @@ namespace HelloWorld
         }
 
         #endregion
+
+        private void StartChallenge1Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(Challenge1));
+
+            }
+        }
     }
 }
