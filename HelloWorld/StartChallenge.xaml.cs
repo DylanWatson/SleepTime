@@ -1,6 +1,7 @@
 ﻿using HelloWorld.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -44,6 +45,8 @@ namespace HelloWorld
             get { return this.navigationHelper; }
         }
 
+     
+
 
         public StartChallenge()
         {
@@ -52,6 +55,8 @@ namespace HelloWorld
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
         }
+
+        
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -66,6 +71,7 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            
         }
 
         /// <summary>

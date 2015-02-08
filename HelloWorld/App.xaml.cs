@@ -34,6 +34,9 @@ namespace HelloWorld
             this.Suspending += OnSuspending;
         }
 
+        public string DBPath { get; set; }
+
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -80,6 +83,9 @@ namespace HelloWorld
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+
+            this.DBPath = "c:/hack.db";
+
             // Ensure the current window is active
             Window.Current.Activate();
         }
