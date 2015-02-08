@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace HelloWorld
 {
+
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
@@ -66,6 +67,19 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            Random rnd = new Random();
+            Number1.Text = rnd.Next(0, 12).ToString();
+            Number2.Text = rnd.Next(0, 12).ToString();
+            int operatorChoice = rnd.Next(0, 1);
+
+            if(operatorChoice.Equals(0))
+            {
+                Operator.Text = "+";
+            }
+            else
+            {
+                Operator.Text = "-";
+            }
         }
 
         /// <summary>
