@@ -44,14 +44,12 @@
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" HorizontalAlignment="Center" FontSize="100"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <Viewbox>
-                <TextBlock Text="Make sure you are alert before you start the callibration." />
-            </Viewbox>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,20" >
-                <Button Content="Start" Click="BeginChallengeButton_Page" FontSize="30"/>
+            <TextBlock Text="Make sure you are alert before you start the calibration in order to get the most accurate results." TextWrapping="Wrap" FontSize="60" Margin="0,0,0,0" Height="210"/>
+            <StackPanel Orientation="Horizontal" Margin="0,100,0,40" HorizontalAlignment="Center">
+                <Button Content="Start" Click="BeginChallengeButton_Page" FontSize="160" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
     </Grid>

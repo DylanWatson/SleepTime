@@ -50,7 +50,7 @@
             <Image Name="image1" Width="200" Height="100" DoubleTapped="AnswerFireButton_Click" Source="../../Assets/fire.png"/>
             <Image Name="image2" Width="200" Height="100" DoubleTapped="AnswerDogButton_Click" Source="../../Assets/dog.png" />
             <Image Name="image3" Width="200" Height="100" DoubleTapped="AnswerCatButton_Click" Source="../../Assets/cat.png" />
-            <TextBlock Name="Question" />
+            <TextBlock Name="Question" FontSize="60"/>
         </StackPanel>
     </Grid>
 </Page>

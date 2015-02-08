@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">Challenge 1</x:String>
+        <x:String x:Key="AppName">Quick Mathematics</x:String>
     </Page.Resources>
 
     <!--
@@ -44,16 +44,19 @@
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" HorizontalAlignment="Center" FontSize="100"/>
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <TextBlock Name="Number1" FontSize="30"/>
-            <TextBlock Name="Operator" FontSize="30"/>
-            <TextBlock Name="Number2" FontSize="30"/>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,20" >
-                <TextBox x:Name="answer" Width="300" HorizontalAlignment="Left" />
-                <Button Content="Submit" Click="SubmitAnswerButton_Click" FontSize="30" />
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="Number1" FontSize="100" HorizontalAlignment="Center"/>
+                <TextBlock Name="Operator" FontSize="100" HorizontalAlignment="Center"/>
+                <TextBlock Name="Number2" FontSize="100" HorizontalAlignment="Center"/>
             </StackPanel>
-        </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0,20,0,20" HorizontalAlignment="Center" >
+                <TextBox x:Name="answer" Width="300" HorizontalAlignment="Left" Height="100" FontSize="80"/>
+                <Button Content="Submit" Click="SubmitAnswerButton_Click" FontSize="80" Margin="0,80,0,0" />
+            </StackPanel>
+       </StackPanel>
     </Grid>
 </Page>
