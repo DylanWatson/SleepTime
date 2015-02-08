@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Graphics.Imaging;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Diagnostics;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -25,7 +26,9 @@ namespace HelloWorld
     /// </summary>
     public sealed partial class Challenge3 : Page
     {
-
+        Stopwatch stopWatch = new Stopwatch();
+        int count = 0;
+        int question = 0;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -68,14 +71,46 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            Random rnd = new Random();
-            int selection = rnd.Next(0,3);
-            selection = 0;
-            if(selection == 0)
+            stopWatch.Start();
+            generateQuestion();
+          
+        }
+
+        public void generateQuestion()
+        {
+            Debug.WriteLine("count: " + count);
+            if(count == 3)
             {
-                string url = "Assets\fire.png";
-                image1.Source = new BitmapImage(new Uri(url));
+                stopWatch.Stop();
+                TimeSpan ts = stopWatch.Elapsed;
+                int milliseconds = ts.Milliseconds;
+                Global.list.Add(milliseconds);
+                Debug.WriteLine("Challenge 3 Time: " + milliseconds);
+                if (this.Frame != null)
+                {
+                    this.Frame.Navigate(typeof(Challenge3Complete));
+                }
             }
+           
+            if (count == 0)
+            {
+                Question.Text = "Double click the hottest item.";
+                question++;
+            }
+
+            if (count == 1)
+            {
+                Question.Text = "Double click Man's Best Friend.";
+                question++;
+            }
+
+            if (count == 2)
+            {
+                Question.Text = "Double click the animal with 9 lives.";
+                question++;
+            }
+
+            Debug.WriteLine("Question: " + question);
         }
 
         /// <summary>
@@ -113,9 +148,66 @@ namespace HelloWorld
 
         #endregion
 
-        private void AnswerSelectButton_Click(object sender, DoubleTappedRoutedEventArgs e)
+        private void AnswerFireButton_Click(object sender, DoubleTappedRoutedEventArgs e)
         {
-
+            checkFireAnswer();
+            count++;
+            generateQuestion();
         }
+
+        public int checkFireAnswer()
+        {
+            if (Question.Text.CompareTo("Double click the hottest item.") == 0)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+        }
+
+        private void AnswerDogButton_Click(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            checkDogAnswer();
+            count++;
+            generateQuestion();
+        }
+
+        public int checkDogAnswer()
+        {
+            if(Question.Text.CompareTo("Double click Man's Best Friend.") == 0)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+        }
+
+        private void AnswerCatButton_Click(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            checkCatAnswer();
+            count++;
+            generateQuestion();
+        }
+
+        public int checkCatAnswer()
+        {
+            if(Question.Text.CompareTo("Double click the animal with 9 lives.") == 0)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+        }
+
+
     }
 }

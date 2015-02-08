@@ -119,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Challenge3Complete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChallengeComplete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +160,9 @@
     <Compile Include="Challenge3.xaml.cs">
       <DependentUpon>Challenge3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Challenge3Complete.xaml.cs">
+      <DependentUpon>Challenge3Complete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChallengeComplete.xaml.cs">
       <DependentUpon>ChallengeComplete.xaml</DependentUpon>
     </Compile>
@@ -163,6 +170,7 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Introduction.xaml.cs">
       <DependentUpon>Introduction.xaml</DependentUpon>
     </Compile>

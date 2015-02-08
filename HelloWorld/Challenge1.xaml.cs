@@ -143,6 +143,7 @@ namespace HelloWorld
                 TimeSpan ts = stopWatch.Elapsed;
                 int milliseconds = ts.Milliseconds;
                 Debug.WriteLine(milliseconds);
+                Global.list.Add(milliseconds);
                 if (this.Frame != null)
                 {
                     this.Frame.Navigate(typeof(ChallengeComplete));
