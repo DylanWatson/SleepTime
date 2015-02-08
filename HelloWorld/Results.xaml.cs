@@ -1,6 +1,7 @@
 ﻿using HelloWorld.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -21,7 +22,7 @@ namespace HelloWorld
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Challenge3Complete : Page
+    public sealed partial class Results : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +46,7 @@ namespace HelloWorld
         }
 
 
-        public Challenge3Complete()
+        public Results()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -66,6 +67,29 @@ namespace HelloWorld
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            int result = 0;
+
+            foreach (int time in Global.list)
+            {
+                result += time;
+            }
+
+            Global.list.Clear();
+
+            Global.sum.Add(result);
+
+            PointCollection points = line.Points;
+
+            for(int i= 0; i < Global.sum.Count();i++)
+            {
+                Point point = new Point(i, Global.sum.ElementAt(i));
+                points.Add(point);
+                Debug.WriteLine(i + " " + Global.sum.ElementAt(i));
+ 
+            }
+
+            line.Points = points;
+
         }
 
         /// <summary>
@@ -102,13 +126,5 @@ namespace HelloWorld
         }
 
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(Results));
-            }
-        }
     }
 }
