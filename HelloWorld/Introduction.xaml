@@ -48,14 +48,14 @@
         </Grid>
             
             <StackPanel Grid.Row="1" Margin="120,30,0,0">
-        <TextBlock Text="Welcome to our app!" FontSize="48" TextAlignment="Center" Padding="0,0,0,30"/>
+        <TextBlock Text="Welcome to Sleep Time!" FontSize="48" TextAlignment="Center" Padding="0,0,0,30"/>
         <TextBlock TextWrapping="Wrap" FontSize="32" FontStyle="Italic" Padding="0,0,0,50">
-                The purpose of this app is to test how aware you are at a given time. This goal is achieved by starting with a
+                The purpose of Sleep Time is to test how aware you are at a given time. This goal is achieved by starting with a
                 calibration stage, which should be done when you feel fresh and relaxed. The test consists of a few different
                 easy challenges, such as simple math, finding patterns among words and pictures, and some logic based questions.
                 The test is planned to take at most one minute. After calibration is done, simply take the test again when you feel 
                 tired and want to find out if productivity will be minimal if you keep working. Upon analyzing test results, the app
-                will then let you know whether you should keep working, or go to bed. This app is perfect to use when you are at a
+                will then let you know whether you should keep working, or go to bed. Sleep Time is perfect to use when you are at a
                 Hackathon, and effectively using time is of essence!
         </TextBlock>
             <Button Content="Back To Main Page" HorizontalAlignment="Center" FontSize="40" Click="Button_Click" />
