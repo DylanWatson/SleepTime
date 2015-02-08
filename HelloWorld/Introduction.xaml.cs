@@ -102,5 +102,13 @@ namespace HelloWorld
         }
 
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(MainPage));
+            }
+        }
     }
 }
