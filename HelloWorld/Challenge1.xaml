@@ -50,7 +50,7 @@
             <TextBlock Name="Number1"/>
             <TextBlock Name="Number2" />
             <StackPanel Orientation="Horizontal" Margin="0,20,0,20" >
-                <TextBox x:Name="answer" Width="300" HorizontalAlignment="Left" TextChanged="NameInput_TextChanged" />
+                <TextBox x:Name="answer" Width="300" HorizontalAlignment="Left" />
                 <Button Content="Submit" Click="SubmitAnswerButton_Click" />
             </StackPanel>
         </StackPanel>
