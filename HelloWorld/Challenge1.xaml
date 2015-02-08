@@ -1,6 +1,6 @@
 ﻿<Page
     x:Name="pageRoot"
-    x:Class="HelloWorld.MainPage"
+    x:Class="HelloWorld.Challenge1"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">Hello, World</x:String>
+        <x:String x:Key="AppName">Challenge 1</x:String>
     </Page.Resources>
 
     <!--
@@ -43,22 +43,16 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-
-     
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-
         </Grid>
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <TextBlock Text="What's your name?" />
+            <TextBlock Name="Number1"/>
+            <TextBlock Name="Number2" />
             <StackPanel Orientation="Horizontal" Margin="0,20,0,20" >
                 <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left" TextChanged="NameInput_TextChanged" />
                 <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
             </StackPanel>
-            <TextBlock x:Name="greetingOutput" />
-            <Button Content="Start Challenge" Click="StartQuizButton_Page" />
-            <Button Content="Start Calibration" Click="StartCallibrationButton_Page" />
-
         </StackPanel>
     </Grid>
 </Page>
